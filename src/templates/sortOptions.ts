@@ -49,6 +49,9 @@ export function createSortOptions(sortMethod: string, translations: TranslationD
         ${TranslationManager.localize(translations, 'sort.zero_last', undefined, 'Zero Last')}
       </option>
 
+      <option value="expiry-zero-last" ${sortMethod === 'expiry-zero-last' ? 'selected' : ''}>
+        ${TranslationManager.localize(translations, 'sort.expiry-zero-last', undefined, 'Expiry Date (Zero Last)')}
+      </option>
     </select>
   `;
 }

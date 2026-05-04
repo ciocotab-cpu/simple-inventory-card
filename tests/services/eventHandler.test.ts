@@ -573,7 +573,10 @@ describe('EventHandler', () => {
         expect(Utilities.validateInventoryItems).toHaveBeenCalledWith(mockInventoryItems);
         expect(mockFilters.filterItems).toHaveBeenCalled();
         expect(mockFilters.sortItems).toHaveBeenCalled();
-        expect(mockUpdateItemsCallback).toHaveBeenCalledWith(mockInventoryItems, 'name');
+        expect(mockUpdateItemsCallback).toHaveBeenCalledWith(
+          mockInventoryItems,
+          'expiry-zero-last',
+        );
         expect(mockFilters.updateFilterIndicators).toHaveBeenCalled();
       });
 

@@ -25,6 +25,7 @@ describe('createSortOptions', () => {
         quantity_low: 'Quantity (Low)',
         sort_by: 'Sort by:',
         zero_last: 'Zero Last',
+        expiry_zero_last: 'Expiry Date - Zero Last',
       },
     };
     vi.clearAllMocks();
@@ -222,7 +223,7 @@ describe('createSortOptions', () => {
 
       const optionMatches = result.match(/<option/g);
       expect(optionMatches).toBeTruthy();
-      expect(optionMatches?.length).toBe(7);
+      expect(optionMatches?.length).toBe(8);
     });
 
     it('should have valid option values', () => {
@@ -306,6 +307,7 @@ describe('createSortOptions', () => {
         'quantity-low',
         'expiry',
         'zero-last',
+        'expiry-zero-last',
       ]);
     });
   });

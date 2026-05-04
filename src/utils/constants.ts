@@ -160,7 +160,7 @@ export const DEFAULTS = {
   LOCATION: '',
   PRICE: 0,
   QUANTITY: 1,
-  SORT_METHOD: 'name',
+  SORT_METHOD: 'expiry-zero-last',
   TODO_LIST: '',
   TODO_QUANTITY_PLACEMENT: 'name',
   UNIT: '',
@@ -174,6 +174,7 @@ export const SORT_METHODS = {
   QUANTITY: 'quantity',
   QUANTITY_LOW: 'quantity-low',
   ZERO_LAST: 'zero-last',
+  EXPIRY_ZERO_LAST: 'expiry-zero-last',
 };
 
 export const FILTERS = {

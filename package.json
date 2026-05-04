@@ -1,14 +1,14 @@
 {
-  "name": "simple-inventory",
+  "name": "simple-inventory-ciocotab",
   "version": "0.4.2b1",
-  "description": "Home Assistant Simple Inventory Integration Card",
-  "author": "Blaine Venturine",
+  "description": "Home Assistant Simple Inventory CiocotabIntegration Card",
+  "author": "Ciocotab",
   "license": "MIT",
   "main": "dist/simple-inventory-card.js",
   "card_type": "simple-inventory-card",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blaineventurine/simple-inventory-card.git"
+    "url": "https://github.com/ciocotab-cpu/simple-inventory-card.git"
   },
   "keywords": [
     "home-assistant",

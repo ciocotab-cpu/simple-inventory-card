@@ -59,6 +59,7 @@ export const DateUtils = {
       today.setHours(0, 0, 0, 0);
 
       const expiry = new Date(expiryDate);
+      expiry.setHours(0, 0, 0, 0);
       const diffTime = expiry.getTime() - today.getTime();
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 

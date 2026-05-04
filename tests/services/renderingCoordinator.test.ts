@@ -233,7 +233,7 @@ describe('RenderingCoordinator', () => {
         mockConfig.entity,
         mockInventoryItems,
         expect.any(Object),
-        'name',
+        'expiry-zero-last',
         mockTodoLists,
         mockTranslations,
         mockConfig,

@@ -138,6 +138,7 @@ describe('Filters', () => {
     vi.mocked(SORT_METHODS).QUANTITY = 'quantity';
     vi.mocked(SORT_METHODS).QUANTITY_LOW = 'quantity_low';
     vi.mocked(SORT_METHODS).ZERO_LAST = 'zero_last';
+    vi.mocked(SORT_METHODS).EXPIRY_ZERO_LAST = 'expiry-zero-last';
     vi.mocked(DateUtils.isExpired).mockReturnValue(false);
     vi.mocked(DateUtils.isExpiringSoon).mockReturnValue(false);
     vi.mocked(Utilities.hasActiveFilters).mockReturnValue(false);
@@ -162,7 +163,7 @@ describe('Filters', () => {
           quantity: ['nonzero'],
           searchText: 'test search',
           showAdvanced: true,
-          sortMethod: SORT_METHODS.NAME,
+          sortMethod: SORT_METHODS.EXPIRY_ZERO_LAST,
         };
         localStorageMock.setItem('filters_test.entity', JSON.stringify(savedFilters));
 
@@ -179,7 +180,7 @@ describe('Filters', () => {
 
         expect(result).toEqual({
           ...testFilters,
-          sortMethod: SORT_METHODS.NAME,
+          sortMethod: SORT_METHODS.EXPIRY_ZERO_LAST,
         });
       });
 
@@ -195,7 +196,7 @@ describe('Filters', () => {
         );
         expect(result).toEqual({
           ...testFilters,
-          sortMethod: SORT_METHODS.NAME,
+          sortMethod: SORT_METHODS.EXPIRY_ZERO_LAST,
         });
 
         consoleSpy.mockRestore();
@@ -208,7 +209,7 @@ describe('Filters', () => {
 
         expect(result).toEqual({
           ...testFilters,
-          sortMethod: SORT_METHODS.NAME,
+          sortMethod: SORT_METHODS.EXPIRY_ZERO_LAST,
         });
       });
 
@@ -220,7 +221,7 @@ describe('Filters', () => {
           quantity: ['zero'],
           searchText: 'test',
           showAdvanced: true,
-          sortMethod: SORT_METHODS.NAME,
+          sortMethod: SORT_METHODS.EXPIRY_ZERO_LAST,
         };
 
         filters.saveFilters('test.entity', testFilters);
