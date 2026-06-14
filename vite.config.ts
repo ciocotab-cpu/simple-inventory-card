@@ -10,10 +10,10 @@ export default defineConfig({
       targets: [
         {
           src: 'src/translations/*.json',
-          dest: 'translations'
-        }
-      ]
-    })
+          dest: 'translations',
+        },
+      ],
+    }),
   ],
   build: {
     lib: {
@@ -73,5 +73,21 @@ export default defineConfig({
       },
     },
     setupFiles: ['./tests/setup.ts'],
+  },
+  server: {
+    host: true, // Permette di accedere alla porta locale
+    port: 5173, // La porta standard di Vite
+    proxy: {
+      // Reindirizza le richieste API e WebSocket a Home Assistant
+      '/api': {
+        target: 'http://localhost:8123', // L'indirizzo di Home Assistant sul tuo PC
+        changeOrigin: true,
+        ws: true, // Fondamentale per i WebSocket di Home Assistant
+      },
+      '/local': {
+        target: 'http://localhost:8123',
+        changeOrigin: true,
+      },
+    },
   },
 });
