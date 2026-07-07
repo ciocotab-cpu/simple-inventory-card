@@ -7,10 +7,11 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig({
   plugins: [
     viteStaticCopy({
+      // 2. Configura la copia e il watch
       targets: [
         {
-          src: 'src/translations/*.json',
-          dest: 'translations',
+          src: 'src/translations/**/*', // Assicurati che il percorso sia corretto (src e non erc)
+          dest: 'translations', // Verranno copiati in dist/translations
         },
       ],
     }),
@@ -34,11 +35,11 @@ export default defineConfig({
     },
     minify: 'terser',
     sourcemap: false,
-    copyPublicDir: false,
+    //copyPublicDir: false,
   },
-  publicDir: false,
+  //publicDir: false,
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.ts', '.json'],
     alias: {
       '@': resolve(__dirname, 'src'),
     },
@@ -74,7 +75,7 @@ export default defineConfig({
     },
     setupFiles: ['./tests/setup.ts'],
   },
-  server: {
+  /*  server: {
     host: true, // Permette di accedere alla porta locale
     port: 5173, // La porta standard di Vite
     proxy: {
@@ -89,5 +90,5 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
-  },
+  },*/
 });

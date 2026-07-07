@@ -30,10 +30,14 @@ export class TranslationManager {
 
   private static async _loadTranslationsInternal(language: string): Promise<TranslationData> {
     const urls = [
+      `/www/community/${this._cardName}/translations/${language}.json`,
       `/local/community/${this._cardName}/translations/${language}.json`,
       `/hacsfiles/${this._cardName}/translations/${language}.json`,
       `/local/community/${this._cardName}/${language}.json`,
       `/hacsfiles/${this._cardName}/${language}.json`,
+      `/www/community/${language}.json`,
+      `/local/community/${language}.json`,
+      `/hacsfiles/${language}.json`,
     ];
 
     for (const url of urls) {
